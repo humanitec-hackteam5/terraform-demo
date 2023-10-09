@@ -9,6 +9,11 @@ data "aws_iam_policy_document" "public" {
 
     effect = "Allow"
 
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
+    }
+
     actions = [
       "s3:GetObject",
       "s3:ListBucket",
