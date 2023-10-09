@@ -9,6 +9,11 @@ data "aws_iam_policy_document" "secrets" {
 
     effect = "Deny"
 
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
+    }
+
     actions = [
       "s3:*",
     ]
