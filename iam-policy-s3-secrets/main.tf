@@ -7,7 +7,7 @@ data "aws_iam_policy_document" "secrets" {
   statement {
     sid = "IPAllow"
 
-    effect = "deny"
+    effect = "Deny"
 
     principals {
       type = "AWS"
