@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "secrets" {
-  name = "${var.s3_bucket}-secrets"
+  name = "${var.s3_bucket}-policy"
   policy = data.aws_iam_policy_document.secrets.json
 }
 
