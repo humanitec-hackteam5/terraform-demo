@@ -18,11 +18,7 @@ data "aws_iam_policy_document" "main" {
   }
 }
 
-resource "aws_iam_group" "aws_admins" {
-  name = "Admin"
-}
-
 resource "aws_iam_group_policy_attachment" "test-attach" {
-  group      = aws_iam_group.aws_admins.name
+  group      = "Admin"
   policy_arn = aws_iam_policy.main.arn
 }
