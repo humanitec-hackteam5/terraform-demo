@@ -13,11 +13,6 @@ data "aws_iam_policy_document" "main" {
       "s3:ListBucket",
     ]
 
-    principals {
-      identifiers = ["*"]
-      type        = "AWS"
-    }
-
     resources = [
       var.s3_bucket_arn,
     ]
