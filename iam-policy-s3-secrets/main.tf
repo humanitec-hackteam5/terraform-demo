@@ -1,6 +1,6 @@
 resource "aws_iam_policy" "main" {
   name        = "${var.s3_bucket}-s3-public"
-  description = "Allows public access to S3 bucket"
+  description = "Allows access to S3 bucket to IP subnet"
   policy      = data.aws_iam_policy_document.main.json
 }
 
