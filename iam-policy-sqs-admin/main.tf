@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "main" {
-  name        = "${var.sqs_queue}-sqs-admin"
+  name        = "${var.prefix}-sqs-admin"
   description = "Admin access to sqs bucket"
   policy      = data.aws_iam_policy_document.main.json
 }

@@ -9,7 +9,7 @@ variable "credentials" {
   })
 }
 
-variable "sqs_queue" {
+variable "prefix" {
   type = string
 }
 variable "sqs_queue_arn" {

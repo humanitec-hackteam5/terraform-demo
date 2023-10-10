@@ -1,5 +1,5 @@
-output "queue" {
-  value = var.queue
+output "prefix" {
+  value = var.prefix
 }
 
 output "arn" {

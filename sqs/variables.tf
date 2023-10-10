@@ -1,4 +1,4 @@
-variable "queue" {
+variable "prefix" {
   type = string
 }
 
