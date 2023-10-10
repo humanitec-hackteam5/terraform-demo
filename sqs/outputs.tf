@@ -1,5 +1,5 @@
 output "queue" {
-  value = module.sqs.id
+  value = module.sqs.name
 }
 
 output "arn" {
