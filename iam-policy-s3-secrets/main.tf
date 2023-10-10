@@ -1,25 +1,21 @@
-resource "aws_s3_bucket_policy" "secrets" {
-  bucket = var.s3_bucket
-  policy = data.aws_iam_policy_document.secrets.json
+resource "aws_iam_policy" "main" {
+  name        = "${var.s3_bucket}-s3-public"
+  description = "Allows public access to S3 bucket"
+  policy      = data.aws_iam_policy_document.main.json
 }
 
-data "aws_iam_policy_document" "secrets" {
+data "aws_iam_policy_document" "main" {
   statement {
     sid = "IPAllow"
 
     effect = "Deny"
-
-    principals {
-      type        = "AWS"
-      identifiers = ["*"]
-    }
 
     actions = [
       "s3:*",
     ]
 
     resources = [
-      "${var.s3_bucket_arn}/*",
+      var.s3_bucket_arn,
     ]
 
     condition {
