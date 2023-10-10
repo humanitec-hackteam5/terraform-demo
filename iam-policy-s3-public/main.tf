@@ -9,7 +9,6 @@ data "aws_iam_policy_document" "main" {
     effect = "Allow"
 
     actions = [
-      "s3:GetObject",
       "s3:ListBucket",
     ]
 
@@ -17,4 +16,17 @@ data "aws_iam_policy_document" "main" {
       var.s3_bucket_arn,
     ]
   }
+
+  statement {
+    effect = "Allow"
+
+    actions = [
+      "s3:GetObject",
+    ]
+
+    resources = [
+      "${var.s3_bucket_arn}/*",
+    ]
+  }
+
 }
