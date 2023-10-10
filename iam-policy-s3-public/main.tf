@@ -20,7 +20,7 @@ data "aws_iam_policy_document" "public" {
     ]
 
     resources = [
-      var.s3_bucket_arn,
+      "${var.s3_bucket_arn}/*",
     ]
   }
 }

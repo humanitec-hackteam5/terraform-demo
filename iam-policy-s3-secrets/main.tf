@@ -19,7 +19,7 @@ data "aws_iam_policy_document" "secrets" {
     ]
 
     resources = [
-      var.s3_bucket_arn,
+      "${var.s3_bucket_arn}/*",
     ]
 
     condition {
