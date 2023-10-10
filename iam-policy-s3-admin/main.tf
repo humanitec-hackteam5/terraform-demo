@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "main" {
-  name        = "${var.s3_bucket}-s3-secrets"
+  name        = "${var.s3_bucket}-s3-admin"
   description = "Admin access to S3 bucket"
   policy      = data.aws_iam_policy_document.main.json
 }
