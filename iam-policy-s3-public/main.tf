@@ -6,8 +6,6 @@ resource "aws_iam_policy" "main" {
 
 data "aws_iam_policy_document" "main" {
   statement {
-    sid = "ListAllow"
-
     effect = "Allow"
 
     actions = [
