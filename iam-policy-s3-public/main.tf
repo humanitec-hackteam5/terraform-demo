@@ -5,28 +5,30 @@ resource "aws_iam_policy" "main" {
 }
 
 data "aws_iam_policy_document" "main" {
+  statement {
+    sid = "ListAllow"
+
+    effect = "Allow"
+
+    actions = [
+      "s3:ListBucket",
+    ]
+
+    resources = [
+      var.s3_bucket_arn,
+    ]
+  }
+
 #  statement {
 #    effect = "Allow"
 #
 #    actions = [
-#      "s3:ListBucket",
+#      "s3:GetObject",
 #    ]
 #
 #    resources = [
-#      var.s3_bucket_arn,
+#      "${var.s3_bucket_arn}/*",
 #    ]
 #  }
-
-  statement {
-    effect = "Allow"
-
-    actions = [
-      "s3:GetObject",
-    ]
-
-    resources = [
-      "${var.s3_bucket_arn}/*",
-    ]
-  }
 
 }
