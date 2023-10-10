@@ -6,6 +6,8 @@ resource "aws_iam_policy" "main" {
 
 data "aws_iam_policy_document" "main" {
   statement {
+    effect = "Allow"
+
     actions = [
       "s3:*",
     ]
@@ -14,4 +16,13 @@ data "aws_iam_policy_document" "main" {
       var.s3_bucket_arn,
     ]
   }
+}
+
+resource "aws_iam_group" "aws_admins" {
+  name = "Admin"
+}
+
+resource "aws_iam_group_policy_attachment" "test-attach" {
+  group      = aws_iam_group.aws_admins.name
+  policy_arn = aws_iam_policy.main.arn
 }
