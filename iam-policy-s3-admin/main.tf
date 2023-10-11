@@ -19,6 +19,6 @@ data "aws_iam_policy_document" "main" {
 }
 
 resource "aws_iam_group_policy_attachment" "test-attach" {
-  group      = "Admin"
+  group      = "nikolai-test-admin-group"
   policy_arn = aws_iam_policy.main.arn
 }
